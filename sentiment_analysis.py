@@ -10,6 +10,7 @@ def sentiment_analysis(data):
         Returns:
             a list containing the calculated sentiment of the news headlines
     """
+    # Uncomment lexicon download on first run
     # nltk.download('vader_lexicon')
     sia = SentimentIntensityAnalyzer()
     result = []
