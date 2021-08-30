@@ -1,5 +1,9 @@
 # NewsAnalysis
-An analysis of sentiment of news site headlines.
+This project aims to analyse popular Australian news sites.  
+Project goals include:
+- Gaining insight on trends in news headlines
+- Comparing language between headlines written by different news organisations
+- Displaying this information visually through an accompanying website
 
 ## Instructions
 To recreate this project install acaconda or miniconda.
