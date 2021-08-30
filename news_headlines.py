@@ -8,7 +8,8 @@ def get_page(url):
         Returns:
             BeautifulSoup object representing the web page
     """
-    page = requests.get(url)
+    headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
+    page = requests.get(url=url, headers=headers)
     return BeautifulSoup(page.content, 'html.parser')
 
 
@@ -33,8 +34,8 @@ def news_dotcomau_headlines():
             list of strings representing the headlines
     """
     soup = get_page("https://www.news.com.au/national/national-news")
-    headlines_tags = soup.select('h4[class="heading"] a')[:30]
-    headlines = list(map(lambda h: h.text[4:-3], headlines_tags))
+    headlines_tags = soup.select('h4[class="storyblock_title"] a')[:30]
+    headlines = list(map(lambda h: h.text, headlines_tags))
     return headlines
 
 
@@ -105,6 +106,6 @@ def skynews_headlines():
             list of strings representing the headlines
     """
     soup = get_page("https://www.skynews.com.au/page/national-news")
-    headlines_tags = soup.select('a[class="card-img-overlay"]')[:30]
-    headlines = list(map(lambda h: h.attrs['aria-label'], headlines_tags))
+    headlines_tags = soup.select('h4[class="storyblock_title"] a')[:30]
+    headlines = list(map(lambda h: h.text, headlines_tags))
     return headlines
