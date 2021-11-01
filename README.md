@@ -5,6 +5,8 @@ Project goals include:
 - Comparing language between headlines written by different news organisations
 - Displaying this information visually through an accompanying website
 
+The project is a work in progress and currently includes code to scrape news headlines and analyse their sentiment.
+
 ## Instructions
 To recreate this project install acaconda or miniconda.
 
